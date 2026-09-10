@@ -7,7 +7,7 @@ function App() {
   const [description, setDescription] = useState("");
 
   const fetchTasks = async () => {
-    const response = await fetch("http://localhost:5000/api/tasks");
+    const response = await fetch("https://mern-task-manager-guls.onrender.com/api/tasks");
     const data = await response.json();
     setTasks(data);
   };
@@ -21,7 +21,7 @@ function App() {
 
     if (!title.trim()) return;
 
-    await fetch("http://localhost:5000/api/tasks", {
+    await fetch("https://mern-task-manager-guls.onrender.com/api/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +38,7 @@ function App() {
   };
 
   const deleteTask = async (id) => {
-    await fetch(`http://localhost:5000/api/tasks/${id}`, {
+    await fetch(`https://mern-task-manager-guls.onrender.com/api/tasks/${id}`, {
       method: "DELETE",
     });
 
@@ -46,7 +46,7 @@ function App() {
   };
 
   const toggleComplete = async (task) => {
-    await fetch(`http://localhost:5000/api/tasks/${task._id}`, {
+    await fetch(`https://mern-task-manager-guls.onrender.com/api/tasks/${task._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
