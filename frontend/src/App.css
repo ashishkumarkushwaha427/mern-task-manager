@@ -1,0 +1,302 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 50px 20px;
+}
+
+.container {
+  max-width: 950px;
+  margin: auto;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.small-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  color: #64748b;
+}
+
+.header h1 {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 16px;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+}
+
+.stat {
+  background: white;
+  min-width: 80px;
+  padding: 15px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid #e8ebf0;
+}
+
+.stat span {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.stat small {
+  color: #64748b;
+}
+
+/* Add task */
+
+.add-card {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid #e8ebf0;
+  margin-bottom: 35px;
+}
+
+.add-card h2 {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #dfe4ea;
+  border-radius: 10px;
+  padding: 14px 16px;
+  outline: none;
+  background: #fafbfc;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #64748b;
+  background: white;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.add-btn {
+  width: fit-content;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  background: #172033;
+  color: white;
+  font-weight: 600;
+}
+
+.add-btn:hover {
+  opacity: 0.9;
+}
+
+/* Tasks */
+
+.tasks-section {
+  margin-bottom: 50px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-heading span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-card {
+  background: white;
+  border: 1px solid #e8ebf0;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.task-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.check {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  background: white;
+  flex-shrink: 0;
+}
+
+.check.checked {
+  background: #172033;
+  border-color: #172033;
+  color: white;
+}
+
+.task-content h3 {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.task-content p {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 9px;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status.pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.status.done {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.task-card.completed h3 {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.delete-btn {
+  border: 1px solid #e2e8f0;
+  background: white;
+  padding: 8px 13px;
+  border-radius: 8px;
+  color: #64748b;
+}
+
+.delete-btn:hover {
+  border-color: #cbd5e1;
+}
+
+/* Empty */
+
+.empty {
+  background: white;
+  border: 1px solid #e8ebf0;
+  border-radius: 16px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto auto 15px;
+  font-size: 24px;
+}
+
+.empty h3 {
+  margin-bottom: 6px;
+}
+
+.empty p {
+  color: #64748b;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .app {
+    padding: 30px 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header h1 {
+    font-size: 34px;
+  }
+
+  .stats {
+    width: 100%;
+  }
+
+  .stat {
+    flex: 1;
+  }
+
+  .task-card {
+    align-items: flex-start;
+  }
+
+  .delete-btn {
+    flex-shrink: 0;
+  }
+}
