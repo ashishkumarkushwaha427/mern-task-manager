@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Register() {
+function Register({ onRegister }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,36 +26,54 @@ function Register() {
     const data = await response.json();
 
     console.log(data);
+
+    if (response.ok) {
+      alert("Registration successful! Please login.");
+      onRegister();
+    } else {
+      alert(data.message);
+    }
   };
 
   return (
-    <div>
-      <h2>Register</h2>
+    <div className="auth-page">
+      <div className="auth-card">
+        <h2>Create Account</h2>
 
-      <form onSubmit={handleRegister}>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <form onSubmit={handleRegister}>
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <button type="submit">Register</button>
-      </form>
+          <button type="submit" className="auth-btn">
+            Register
+          </button>
+        </form>
+
+        <p className="auth-switch">
+          Already have an account?
+          <button onClick={onRegister}>
+            Login
+          </button>
+        </p>
+      </div>
     </div>
   );
 }

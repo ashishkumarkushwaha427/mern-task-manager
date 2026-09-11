@@ -300,3 +300,70 @@ textarea {
     flex-shrink: 0;
   }
 }
+
+/* Authentication */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 35px;
+  border-radius: 18px;
+  border: 1px solid #e8ebf0;
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 30px;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-card input {
+  width: 100%;
+  border: 1px solid #dfe4ea;
+  border-radius: 10px;
+  padding: 13px 15px;
+  background: #fafbfc;
+}
+
+.auth-btn {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 13px;
+  background: #172033;
+  color: white;
+  font-weight: 600;
+}
+
+.auth-btn:hover {
+  opacity: 0.9;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  color: #64748b;
+}
+
+.auth-switch button {
+  border: none;
+  background: none;
+  color: #172033;
+  font-weight: 600;
+  margin-left: 5px;
+}
