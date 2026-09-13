@@ -4,8 +4,14 @@
   padding: 0;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
-  font-family: Inter, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background: #f5f7fb;
   color: #172033;
 }
@@ -20,24 +26,31 @@ button {
   cursor: pointer;
 }
 
+/* =========================
+   MAIN APP
+========================= */
+
 .app {
   min-height: 100vh;
-  padding: 50px 20px;
+  padding: 40px 20px;
 }
 
 .container {
+  width: 100%;
   max-width: 950px;
-  margin: auto;
+  margin: 0 auto;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 .small-title {
@@ -50,6 +63,7 @@ button {
 
 .header h1 {
   font-size: 42px;
+  color: #172033;
   margin-bottom: 8px;
 }
 
@@ -58,41 +72,49 @@ button {
   font-size: 16px;
 }
 
+/* =========================
+   STATS
+========================= */
+
 .stats {
   display: flex;
   gap: 12px;
 }
 
 .stat {
-  background: white;
-  min-width: 80px;
+  background: #ffffff;
+  min-width: 90px;
   padding: 15px;
   border-radius: 14px;
   text-align: center;
-  border: 1px solid #e8ebf0;
+  border: 1px solid #e2e8f0;
 }
 
 .stat span {
   display: block;
   font-size: 22px;
   font-weight: 700;
+  color: #172033;
 }
 
 .stat small {
   color: #64748b;
 }
 
-/* Add task */
+/* =========================
+   ADD TASK
+========================= */
 
 .add-card {
-  background: white;
+  background: #ffffff;
   padding: 28px;
   border-radius: 18px;
-  border: 1px solid #e8ebf0;
+  border: 1px solid #e2e8f0;
   margin-bottom: 35px;
 }
 
 .add-card h2 {
+  color: #172033;
   margin-bottom: 20px;
 }
 
@@ -105,21 +127,30 @@ form {
 input,
 textarea {
   width: 100%;
-  border: 1px solid #dfe4ea;
+  border: 1px solid #cbd5e1;
   border-radius: 10px;
   padding: 14px 16px;
   outline: none;
-  background: #fafbfc;
+  background: #ffffff;
+  color: #172033;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748b;
+  opacity: 1;
 }
 
 input:focus,
 textarea:focus {
-  border-color: #64748b;
-  background: white;
+  border-color: #172033;
+  background: #ffffff;
+  color: #172033;
 }
 
 textarea {
   resize: vertical;
+  min-height: 110px;
 }
 
 .add-btn {
@@ -128,7 +159,7 @@ textarea {
   border-radius: 10px;
   padding: 12px 20px;
   background: #172033;
-  color: white;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -136,7 +167,9 @@ textarea {
   opacity: 0.9;
 }
 
-/* Tasks */
+/* =========================
+   TASK SECTION
+========================= */
 
 .tasks-section {
   margin-bottom: 50px;
@@ -147,6 +180,11 @@ textarea {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+}
+
+.section-heading h2,
+.section-heading h3 {
+  color: #172033;
 }
 
 .section-heading span {
@@ -160,9 +198,13 @@ textarea {
   gap: 12px;
 }
 
+/* =========================
+   TASK CARD
+========================= */
+
 .task-card {
-  background: white;
-  border: 1px solid #e8ebf0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 20px;
   display: flex;
@@ -175,6 +217,7 @@ textarea {
   display: flex;
   align-items: flex-start;
   gap: 15px;
+  min-width: 0;
 }
 
 .check {
@@ -182,25 +225,32 @@ textarea {
   height: 25px;
   border-radius: 50%;
   border: 2px solid #cbd5e1;
-  background: white;
+  background: #ffffff;
   flex-shrink: 0;
 }
 
 .check.checked {
   background: #172033;
   border-color: #172033;
-  color: white;
+  color: #ffffff;
+}
+
+.task-content {
+  min-width: 0;
 }
 
 .task-content h3 {
   font-size: 17px;
+  color: #172033;
   margin-bottom: 5px;
+  word-break: break-word;
 }
 
 .task-content p {
   color: #64748b;
   font-size: 14px;
   margin-bottom: 9px;
+  word-break: break-word;
 }
 
 .status {
@@ -227,22 +277,25 @@ textarea {
 }
 
 .delete-btn {
-  border: 1px solid #e2e8f0;
-  background: white;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
   padding: 8px 13px;
   border-radius: 8px;
-  color: #64748b;
+  color: #172033;
+  flex-shrink: 0;
 }
 
 .delete-btn:hover {
-  border-color: #cbd5e1;
+  border-color: #94a3b8;
 }
 
-/* Empty */
+/* =========================
+   EMPTY STATE
+========================= */
 
 .empty {
-  background: white;
-  border: 1px solid #e8ebf0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 60px 20px;
   text-align: center;
@@ -261,6 +314,7 @@ textarea {
 }
 
 .empty h3 {
+  color: #172033;
   margin-bottom: 6px;
 }
 
@@ -268,40 +322,9 @@ textarea {
   color: #64748b;
 }
 
-/* Mobile */
-
-@media (max-width: 700px) {
-  .app {
-    padding: 30px 15px;
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header h1 {
-    font-size: 34px;
-  }
-
-  .stats {
-    width: 100%;
-  }
-
-  .stat {
-    flex: 1;
-  }
-
-  .task-card {
-    align-items: flex-start;
-  }
-
-  .delete-btn {
-    flex-shrink: 0;
-  }
-}
-
-/* Authentication */
+/* =========================
+   AUTH PAGE
+========================= */
 
 .auth-page {
   min-height: 100vh;
@@ -309,21 +332,23 @@ textarea {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background: #f5f7fb;
 }
 
 .auth-card {
   width: 100%;
   max-width: 420px;
-  background: white;
+  background: #ffffff;
   padding: 35px;
   border-radius: 18px;
-  border: 1px solid #e8ebf0;
+  border: 1px solid #e2e8f0;
 }
 
 .auth-card h2 {
   text-align: center;
   margin-bottom: 25px;
   font-size: 30px;
+  color: #172033;
 }
 
 .auth-card form {
@@ -334,10 +359,22 @@ textarea {
 
 .auth-card input {
   width: 100%;
-  border: 1px solid #dfe4ea;
+  border: 1px solid #cbd5e1;
   border-radius: 10px;
   padding: 13px 15px;
-  background: #fafbfc;
+  background: #ffffff;
+  color: #172033;
+}
+
+.auth-card input::placeholder {
+  color: #64748b;
+  opacity: 1;
+}
+
+.auth-card input:focus {
+  border-color: #172033;
+  color: #172033;
+  background: #ffffff;
 }
 
 .auth-btn {
@@ -346,7 +383,7 @@ textarea {
   border-radius: 10px;
   padding: 13px;
   background: #172033;
-  color: white;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -362,8 +399,140 @@ textarea {
 
 .auth-switch button {
   border: none;
-  background: none;
+  background: transparent;
   color: #172033;
   font-weight: 600;
   margin-left: 5px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .app {
+    padding: 25px 15px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat {
+    min-width: 0;
+    padding: 16px 10px;
+  }
+
+  .add-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .add-card h2 {
+    font-size: 22px;
+  }
+
+  input,
+  textarea {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .add-btn {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .section-heading {
+    gap: 10px;
+  }
+
+  .task-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px;
+  }
+
+  .task-left {
+    width: 100%;
+  }
+
+  .delete-btn {
+    width: 100%;
+    padding: 11px;
+  }
+
+  .auth-page {
+    padding: 15px;
+    align-items: center;
+  }
+
+  .auth-card {
+    padding: 25px 20px;
+  }
+
+  .auth-card h2 {
+    font-size: 28px;
+  }
+
+  .auth-card input {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .auth-btn {
+    padding: 14px;
+  }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 400px) {
+
+  .app {
+    padding: 20px 12px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .add-card {
+    padding: 16px;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .stat {
+    padding: 13px 8px;
+  }
+
+  .task-card {
+    padding: 15px;
+  }
 }
